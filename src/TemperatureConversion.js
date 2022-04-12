@@ -29,7 +29,7 @@ export default function TemperatureConversion(props) {
             </span>
           </span>
         </p>
-        <small className="col-12">
+        <small className="col-12 tempRange">
           <span className="tempLow">47</span>°F/
           <span className="tempHigh">79</span>°F
         </small>

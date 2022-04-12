@@ -15,3 +15,17 @@
   position: relative;
   margin-top: -50px;
 }
+
+.weatherDescription {
+  font-size: 65px;
+}
+
+.weatherImage {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.weatherExtras {
+  list-style: none;
+  padding: 0px;
+}
