@@ -23,6 +23,7 @@ export default function WeatherSearch(props) {
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].main,
       image: `https://openweathermap.org/img/wn/${icon}@2x.png`,
+      coords: response.data.coord,
     });
     setReady(true);
   }
@@ -67,7 +68,7 @@ export default function WeatherSearch(props) {
           </div>
         </div>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coords={weatherData.coords} />
       </div>
     );
   } else {
