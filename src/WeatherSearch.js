@@ -24,6 +24,20 @@ export default function WeatherSearch(props) {
     setReady(true);
   }
 
+  let [place, setPlace] = useState(null);
+  function saveCity(event) {
+    event.preventDefault();
+    setPlace(event.target.value);
+  }
+
+  function getWeather(event) {
+    event.preventDefault();
+    const apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
+    let units = "imperial";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (ready) {
     return (
       <div>
@@ -34,8 +48,13 @@ export default function WeatherSearch(props) {
                 type="search"
                 placeholder="Enter a City"
                 className="col-3 searchBar"
+                onChange={saveCity}
               />
-              <button type="submit" className="col-4 btn searchButton">
+              <button
+                type="submit"
+                className="col-4 btn searchButton"
+                onClick={getWeather}
+              >
                 Search
               </button>
             </form>
