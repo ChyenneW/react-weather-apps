@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo";
+
+import "./WeatherSearch.css";
 
 export default function WeatherSearch(props) {
   const [ready, setReady] = useState(false);
@@ -24,12 +26,27 @@ export default function WeatherSearch(props) {
 
   if (ready) {
     return (
-      <div className="container">
-        <div className="row">
-          <form>
-            <input type="search" placeholder="Enter a City" />
-            <imput type="submit" value="Search" />
-          </form>
+      <div>
+        <div className="container">
+          <div className="search">
+            <form className="row">
+              <input
+                type="search"
+                placeholder="Enter a City"
+                className="col-4 searchBar"
+              />
+              <imput
+                type="submit"
+                value="Search"
+                className="col-3 btn searchButton"
+              />
+            </form>
+            <div className="row">
+              <div className="col-3">
+                <button className="geoLocateButton">Current Location</button>
+              </div>
+            </div>
+          </div>
         </div>
         <WeatherInfo data={weatherData} />
       </div>
@@ -39,7 +56,7 @@ export default function WeatherSearch(props) {
     let units = "imperial";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
-  }
 
-  return <div>Loading Weather...</div>;
+    return <div>Loading Weather...</div>;
+  }
 }

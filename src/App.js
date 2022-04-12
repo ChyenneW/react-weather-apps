@@ -1,4 +1,5 @@
 import Footer from "./Footer";
+import WeatherSearch from "./WeatherSearch";
 
 import "./App.css";
 
@@ -10,6 +11,7 @@ export default function App() {
           <div>Weather App</div>
         </header>
       </div>
+      <WeatherSearch defaultCity="New York" />
       <Footer />
     </div>
   );
