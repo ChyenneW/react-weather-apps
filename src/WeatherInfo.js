@@ -22,7 +22,13 @@ export default function WeatherInfo(props) {
         <TemperatureConversion imperial={props.data.temperature} />
       </div>
       <div className="row d-flex justify-content-evenly imageDescription">
-        <div className="col-6 weatherDescription">{props.data.description}</div>
+        <div className="col-6">
+          <div className="weatherDescription">{props.data.description}</div>
+          <ul className="weatherExtras">
+            <li>Humidity: {props.data.humidity}%</li>
+            <li>Wind: {props.data.wind} km/h</li>
+          </ul>
+        </div>
         <div className="col-6">
           <img
             src={props.data.image}
@@ -30,12 +36,6 @@ export default function WeatherInfo(props) {
             className="weatherImage"
           />
         </div>
-      </div>
-      <div className="row">
-        <ul className="weatherExtras">
-          <li>Humidity: {props.data.humidity}%</li>
-          <li>Wind: {props.data.wind} km/h</li>
-        </ul>
       </div>
     </div>
   );

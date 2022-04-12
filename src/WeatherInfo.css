@@ -26,11 +26,18 @@
 }
 
 .weatherImage {
-  max-width: 100px;
-  margin: 0 auto;
+  width: 400px;
+  position: relative;
+  margin-top: -170px;
 }
 
 .weatherExtras {
   list-style: none;
   padding: 0px;
+  font-size: 18px;
+  color: rgb(70, 69, 69);
+  display: block;
+  position: relative;
+  margin-top: -10px;
+  text-align: left;
 }
