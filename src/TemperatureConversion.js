@@ -30,14 +30,15 @@ export default function TemperatureConversion(props) {
           </span>
         </p>
         <small className="col-12 tempRange">
-          <span className="tempLow">47</span>°F/
-          <span className="tempHigh">79</span>°F
+          <span className="tempLow">{props.low}</span>°F/
+          <span className="tempHigh">{props.high}</span>°F
         </small>
       </div>
     );
   } else {
     let metric = Math.round((props.imperial - 32) * (5 / 9));
-
+    let metricMin = Math.round((props.low - 32) * (5 / 9));
+    let metricMax = Math.round((props.high - 32) * (5 / 9));
     return (
       <div>
         <p className="col-12">
@@ -52,8 +53,8 @@ export default function TemperatureConversion(props) {
           </span>
         </p>
         <small className="col-12 tempRange">
-          <span className="tempLow">47</span>°C/
-          <span className="tempHigh">79</span>°C
+          <span className="tempLow">{metricMin}</span>°C/
+          <span className="tempHigh">{metricMax}</span>°C
         </small>
       </div>
     );

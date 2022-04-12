@@ -19,7 +19,11 @@ export default function WeatherInfo(props) {
         </ul>
       </div>
       <div className="row">
-        <TemperatureConversion imperial={props.data.temperature} />
+        <TemperatureConversion
+          imperial={props.data.temperature}
+          low={props.data.tempMin}
+          high={props.data.tempMax}
+        />
       </div>
       <div className="row d-flex justify-content-evenly imageDescription">
         <div className="col-6">
