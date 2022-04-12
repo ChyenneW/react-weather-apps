@@ -1,0 +1,22 @@
+.tempNow {
+  font-size: 80px;
+}
+
+.units {
+  position: relative;
+  font-size: 20px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #5cc1b3;
+}
+
+a:hover {
+  text-decoration: dotted;
+  cursor: pointer;
+}

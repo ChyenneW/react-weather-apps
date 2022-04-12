@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./TemperatureConversion.css";
+
 export default function TemperatureConversion(props) {
   const [unit, setUnit] = useState("imperial");
 
@@ -17,16 +19,19 @@ export default function TemperatureConversion(props) {
     return (
       <div>
         <p className="col-12">
-          {props.imperial}°<span className="unit">F</span> |{" "}
-          <span className="unit">
-            <a href="/" onClick={convertToCel}>
-              C
-            </a>
+          <span className="tempNow">{props.imperial}</span>{" "}
+          <span className="units">
+            °<span className="active">F</span> |{" "}
+            <span>
+              <a href="/" onClick={convertToCel}>
+                C
+              </a>
+            </span>
           </span>
         </p>
         <small className="col-12">
-          47°<span className="unit">F</span>/79°
-          <span className="unit">F</span>
+          <span className="tempLow">47</span>°F/
+          <span className="tempHigh">79</span>°F
         </small>
       </div>
     );
@@ -34,20 +39,27 @@ export default function TemperatureConversion(props) {
     let metric = Math.Round((props.imperial - 32) * (5 / 9));
 
     return (
-      <div>
-        <p className="col-12">
-          {metric}°
-          <span className="unit">
-            <a href="/" onClick={convertToFah}>
-              F
-            </a>
-          </span>{" "}
-          | <span className="unit">C</span>
-        </p>
-        <small className="col-12">
-          47°<span className="unit">C</span>/79°
-          <span className="unit">C</span>
-        </small>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="tempNow">{metric}</div>
+            <div className="units">
+              °
+              <span>
+                <a href="/" onClick={convertToFah}>
+                  F
+                </a>
+              </span>{" "}
+              | <span className="active">C</span>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <small className="col-12">
+            <span className="tempLow">47</span>°C/
+            <span className="tempHigh">79</span>°C
+          </small>
+        </div>
       </div>
     );
   }
