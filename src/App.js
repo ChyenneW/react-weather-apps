@@ -1,3 +1,5 @@
+import Footer from "./Footer";
+
 import "./App.css";
 
 export default function App() {
@@ -6,6 +8,7 @@ export default function App() {
       <header className="App-header">
         <div>Weather App</div>
       </header>
+      <Footer />
     </div>
   );
 }
