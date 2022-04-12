@@ -1,6 +1,7 @@
 import react from "react";
 
 import Date from "./Date";
+import TemperatureConversion from "./TemperatureConversion";
 
 export default function WeatherInfo(props) {
   return (
@@ -17,8 +18,7 @@ export default function WeatherInfo(props) {
         </ul>
       </div>
       <div className="row">
-        <p className="col-12">67°F</p>
-        <small className="col-12">47°F/79°F</small>
+        <TemperatureConversion imperial={props.data.temperature} />
       </div>
       <div className="row">
         <p className="col-6">{props.data.description}</p>
