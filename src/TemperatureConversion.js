@@ -55,7 +55,7 @@ export default function TemperatureConversion(props) {
           </div>
         </div>
         <div className="row">
-          <small className="col-12">
+          <small className="col-12 tempRange">
             <span className="tempLow">47</span>°C/
             <span className="tempHigh">79</span>°C
           </small>

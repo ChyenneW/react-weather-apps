@@ -20,3 +20,8 @@ a:hover {
   text-decoration: dotted;
   cursor: pointer;
 }
+
+.tempRange {
+  font-size: 16px;
+  color: rgb(70, 69, 69);
+}
