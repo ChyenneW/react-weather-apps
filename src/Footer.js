@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <Footer>
+    <footer>
       This project was coded by{" "}
       <a
         href="www.linkedin.com/in/chyennew"
@@ -22,6 +22,6 @@ export default function Footer() {
         open-sourced on GitHub
       </a>
       .
-    </Footer>
+    </footer>
   );
 }
