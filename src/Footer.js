@@ -14,7 +14,7 @@ export default function Footer() {
       </a>{" "}
       and is
       <a
-        href="https://github.com/ChyenneW/react-weather-app"
+        href="https://github.com/ChyenneW/react-weather-apps"
         target="_blank"
         className="footerLink"
         rel="noreferrer"
