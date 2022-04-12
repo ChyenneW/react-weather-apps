@@ -1,6 +1,24 @@
 import React from "react";
 
 export default function Date(props) {
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let month = months[props.date.getMonth()];
+  let date = props.date.getDate();
+
   let days = [
     "Sunday",
     "Monday",
@@ -29,13 +47,27 @@ export default function Date(props) {
   if (props.date.getHours >= 13) {
     return (
       <div>
-        {day}, {hour}:{minutes} P.M
+        <div>
+          {day},{month}
+          {""}
+          {date}
+        </div>
+        <div>
+          {hour}:{minutes} P.M
+        </div>
       </div>
     );
   } else {
     return (
       <div>
-        {day}, {hour}:{minutes} A.M
+        <div>
+          {day},{month}
+          {""}
+          {date}
+        </div>
+        <div>
+          {hour}:{minutes} A.M
+        </div>
       </div>
     );
   }

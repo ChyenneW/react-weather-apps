@@ -3,18 +3,19 @@ import React from "react";
 import Date from "./Date";
 import TemperatureConversion from "./TemperatureConversion";
 
+import "./WeatherInfo.css";
+
 export default function WeatherInfo(props) {
   return (
     <div className="container">
-      <div className="row">
-        <div>{props.data.city}</div>
+      <div className="row searchedCity">
+        <h3>{props.data.city}</h3>
       </div>
       <div className="row">
-        <ul>
+        <ul className="timeList">
           <li>
             <Date date={props.data.date} />
           </li>
-          <li>5:04 PM</li>
         </ul>
       </div>
       <div className="row">
@@ -29,7 +30,7 @@ export default function WeatherInfo(props) {
         ></img>
       </div>
       <div className="row">
-        <ul>
+        <ul className="">
           <li>Humidity:{props.data.humidity} %</li>
           <li>Wind:{props.data.wind} km/h</li>
         </ul>
