@@ -8,8 +8,8 @@ import "./WeatherInfo.css";
 export default function WeatherInfo(props) {
   return (
     <div className="container">
-      <div className="row searchedCity">
-        <h3>{props.data.city}</h3>
+      <div className="row">
+        <h3 className="searchedCity">{props.data.city}</h3>
       </div>
       <div className="row">
         <ul className="timeList">
@@ -28,7 +28,7 @@ export default function WeatherInfo(props) {
             src={props.data.image}
             alt={props.data.description}
             className="weatherImage"
-          ></img>
+          />
         </div>
       </div>
       <div className="row">

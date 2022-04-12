@@ -1,0 +1,15 @@
+footer {
+  font-size: 12px;
+  text-decoration: none;
+  text-align: center;
+  padding: 30px;
+}
+
+.footerLink {
+  color: #5cc1b3;
+}
+
+.footerLink:hover {
+  text-decoration: dotted;
+  cursor: pointer;
+}

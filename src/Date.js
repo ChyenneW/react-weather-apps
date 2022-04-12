@@ -48,9 +48,7 @@ export default function Date(props) {
     return (
       <div>
         <div>
-          {day},{month}
-          {""}
-          {date}
+          {day}, {month} {date}
         </div>
         <div>
           {hour}:{minutes} P.M
@@ -61,9 +59,7 @@ export default function Date(props) {
     return (
       <div>
         <div>
-          {day},{month}
-          {""}
-          {date}
+          {day}, {month} {date}
         </div>
         <div>
           {hour}:{minutes} A.M

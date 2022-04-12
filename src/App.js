@@ -7,12 +7,12 @@ import "./App.css";
 export default function App() {
   return (
     <div>
-      <div className="App">
+      <div className="container App">
         <header className="App-header">
           <div>Weather App</div>
         </header>
+        <WeatherSearch defaultCity="New York" />
       </div>
-      <WeatherSearch defaultCity="New York" />
       <Footer />
     </div>
   );

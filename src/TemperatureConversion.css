@@ -11,12 +11,12 @@
   font-weight: bold;
 }
 
-a {
+.conversionLink {
   text-decoration: none;
   color: #5cc1b3;
 }
 
-a:hover {
+.conversionLink:hover {
   text-decoration: dotted;
   cursor: pointer;
 }

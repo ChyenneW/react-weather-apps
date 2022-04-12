@@ -1,12 +1,10 @@
 .App {
-  text-align: center;
+  background-color: #737475;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .App-header {
-  background-color: #282c34;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  text-align: center;
 }

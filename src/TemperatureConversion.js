@@ -23,7 +23,7 @@ export default function TemperatureConversion(props) {
           <span className="units">
             °<span className="active">F</span> |{" "}
             <span>
-              <a href="/" onClick={convertToCel}>
+              <a href="/" onClick={convertToCel} className="conversionLink">
                 C
               </a>
             </span>
@@ -46,7 +46,7 @@ export default function TemperatureConversion(props) {
             <div className="units">
               °
               <span>
-                <a href="/" onClick={convertToFah}>
+                <a href="/" onClick={convertToFah} className="conversionLink">
                   F
                 </a>
               </span>{" "}

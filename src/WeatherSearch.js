@@ -28,23 +28,19 @@ export default function WeatherSearch(props) {
     return (
       <div>
         <div className="container">
-          <div className="search">
-            <form className="row">
+          <div className="row search">
+            <form className="">
               <input
                 type="search"
                 placeholder="Enter a City"
-                className="col-4 searchBar"
+                className="col-3 searchBar"
               />
-              <imput
-                type="submit"
-                value="Search"
-                className="col-3 btn searchButton"
-              />
+              <button type="submit" className="col-4 btn searchButton">
+                Search
+              </button>
             </form>
-            <div className="row">
-              <div className="col-3">
-                <button className="geoLocateButton">Current Location</button>
-              </div>
+            <div className="col-3">
+              <button className="geoLocateButton">Current Location</button>
             </div>
           </div>
         </div>
