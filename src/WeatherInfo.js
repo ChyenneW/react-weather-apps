@@ -34,11 +34,9 @@ export default function WeatherInfo(props) {
       </div>
       <div className="row d-flex justify-content-evenly imageDescription">
         <div className="col-6">
-          <div className="weatherDescription">{props.data.description}</div>
-          <ul className="weatherExtras">
-            <li>Humidity: {props.data.humidity}%</li>
-            <li>Wind: {props.data.wind} km/h</li>
-          </ul>
+          <div className="weatherDescription">
+            <i>{props.data.description}</i> is in your forecast for today.
+          </div>
         </div>
         <div className="col-6">
           <img

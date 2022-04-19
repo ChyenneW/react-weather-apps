@@ -5,6 +5,7 @@ import SearchedCity from "./SearchedCity";
 import WeatherForecast from "./WeatherForecast";
 
 import "./DetailedSearch.css";
+import ForecastInfo from "./ForecastInfo";
 
 export default function DetailedSearch(props) {
   const [ready, setReady] = useState(false);
@@ -68,6 +69,7 @@ export default function DetailedSearch(props) {
           </div>
         </div>
         <SearchedCity data={weatherData} />
+        <ForecastInfo humidity={weatherData.humidity} wind={weatherData.wind} />
         <WeatherForecast coords={weatherData.coords} />
       </div>
     );
