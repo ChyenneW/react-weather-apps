@@ -52,7 +52,7 @@ export default function WeatherSearch(props) {
               <input
                 type="search"
                 placeholder="Enter a City"
-                className="col-3 searchBar"
+                className="col-6 searchBar"
                 onChange={saveCity}
               />
               <button
