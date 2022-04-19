@@ -3,9 +3,9 @@ import axios from "axios";
 
 import SearchedCity from "./SearchedCity";
 import WeatherForecast from "./WeatherForecast";
+import ForecastInfo from "./ForecastInfo";
 
 import "./DetailedSearch.css";
-import ForecastInfo from "./ForecastInfo";
 
 export default function DetailedSearch(props) {
   const [ready, setReady] = useState(false);
