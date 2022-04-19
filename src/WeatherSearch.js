@@ -62,9 +62,6 @@ export default function WeatherSearch(props) {
                 Search
               </button>
             </form>
-            <div className="col-3">
-              <button className="geoLocateButton">Current Location</button>
-            </div>
           </div>
         </div>
         <WeatherInfo data={weatherData} />
