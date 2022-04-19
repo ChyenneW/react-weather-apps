@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 
 import Footer from "./Footer";
 import WeatherSearch from "./WeatherSearch";
+import DetailedSearch from "./DetailedSearch";
+import GeoWeather from "./GeoWeather";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import DetailedSearch from "./DetailedSearch";
-import GeoWeather from "./GeoWeather";
 
 export default function App() {
   return (

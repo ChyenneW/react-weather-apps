@@ -3,9 +3,9 @@ import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo";
 import HourlyForecast from "./HourlyForecast";
+import GeolocationButton from "./GeolocationButton";
 
 import "./WeatherSearch.css";
-import GeolocationButton from "./GeolocationButton";
 
 export default function WeatherSearch(props) {
   const [ready, setReady] = useState(false);
