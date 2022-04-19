@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import Date from "./Date";
 import SearchedCity from "./SearchedCity";
 import TemperatureConversion from "./TemperatureConversion";
 

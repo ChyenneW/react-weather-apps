@@ -4,7 +4,6 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import HourlyForecast from "./HourlyForecast";
 
-import SearchedCity from "./SearchedCity";
 import "./WeatherSearch.css";
 
 export default function WeatherSearch(props) {
