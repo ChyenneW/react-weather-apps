@@ -1,11 +1,16 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./GeoWeather.css";
 
-export default function GeoWeather(props) {
+export default function GeoWeather() {
   const [weatherData, setWeatherData] = useState("");
+  let [loaded, setLoaded] = useState("unloaded");
+
+  useEffect(() => {
+    setLoaded("unloaded");
+  }, [""]);
 
   function getLocation(event) {
     navigator.geolocation.getCurrentPosition(getCoords);
@@ -27,6 +32,8 @@ export default function GeoWeather(props) {
       image: `https://openweathermap.org/img/wn/${icon}@2x.png`,
       coords: response.data.coord,
     });
+
+    setLoaded("loaded");
   }
 
   function getCoords(position) {
@@ -38,32 +45,36 @@ export default function GeoWeather(props) {
     axios.get(coordsApiUrl).then(giveCoordsWeather);
   }
 
-  getLocation();
+  if (loaded === "unloaded") {
+    getLocation();
 
-  return (
-    <div className="container">
-      <div className="row searchedCityHead">
-        <Link to="/" className="col-1 navigationLinks">
-          ⇐
-        </Link>
-        <h3 className="col-6 searchedCity">{weatherData.city}</h3>
-      </div>
-      <div className="row weatherDescription">
-        <div className="col-7">
-          <div>It is {weatherData.temperature}°F .</div>
-          <div>
-            Today's highs are going to climb to around {weatherData.tempMax}
-            and the lows are going to dip to {weatherData.tempMin}.
+    return <div>Tracking your location.</div>;
+  } else {
+    return (
+      <div className="container">
+        <div className="row searchedCityHead">
+          <Link to="/" className="col-1 navigationLinks">
+            ⇐
+          </Link>
+          <h3 className="col-6 searchedCity">{weatherData.city}</h3>
+        </div>
+        <div className="row weatherDescription">
+          <div className="col-7">
+            <div>It is {weatherData.temperature}°F .</div>
+            <div>
+              Today's highs are going to climb to around {weatherData.tempMax}
+              and the lows are going to dip to {weatherData.tempMin}.
+            </div>
+          </div>
+          <div className="col-2">
+            <img
+              src={weatherData.image}
+              alt={weatherData.description}
+              className="weatherImage"
+            />
           </div>
         </div>
-        <div className="col-2">
-          <img
-            src={weatherData.image}
-            alt={weatherData.description}
-            className="weatherImage"
-          />
-        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
