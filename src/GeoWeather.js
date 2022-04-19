@@ -10,7 +10,7 @@ export default function GeoWeather() {
 
   useEffect(() => {
     setLoaded("unloaded");
-  }, [""]);
+  }, []);
 
   function getLocation(event) {
     navigator.geolocation.getCurrentPosition(getCoords);
@@ -60,10 +60,10 @@ export default function GeoWeather() {
         </div>
         <div className="row weatherDescription">
           <div className="col-7">
-            <div>It is {weatherData.temperature}°F .</div>
+            <div>It is currently {weatherData.temperature}°F .</div>
             <div>
-              Today's highs are going to climb to around {weatherData.tempMax}
-              and the lows are going to dip to {weatherData.tempMin}.
+              Today's highs are going to climb to around {weatherData.tempMax}°F
+              and the lows are going to dip to {weatherData.tempMin}°F.
             </div>
           </div>
           <div className="col-2">
