@@ -1,0 +1,22 @@
+.searchedCityHead {
+  align-content: center;
+  justify-content: center;
+}
+
+.searchedCity {
+  color: #ff6473;
+  font-size: 60px;
+  font-family: Chewy;
+  text-align: center;
+}
+
+.weatherDescription {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.weatherImage {
+  width: 250px;
+  position: relative;
+  margin-top: -5px;
+}

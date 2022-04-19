@@ -6,6 +6,7 @@ import WeatherSearch from "./WeatherSearch";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import DetailedSearch from "./DetailedSearch";
+import GeoWeather from "./GeoWeather";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             path="detailed"
             element={<DetailedSearch defaultCity="New York" />}
           />
+          <Route path="geo-weather" element={<GeoWeather />} />
         </Routes>
       </div>
       <Footer />
