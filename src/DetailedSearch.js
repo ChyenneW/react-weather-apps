@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import WeatherInfo from "./WeatherInfo";
+import SearchedCity from "./SearchedCity";
 import WeatherForecast from "./WeatherForecast";
 
-import "./WeatherSearch.css";
+import "./DetailedSearch.css";
 
-export default function WeatherSearch(props) {
+export default function DetailedSearch(props) {
   const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({});
 
@@ -67,7 +67,7 @@ export default function WeatherSearch(props) {
             </div>
           </div>
         </div>
-        <WeatherInfo data={weatherData} />
+        <SearchedCity data={weatherData} />
         <WeatherForecast coords={weatherData.coords} />
       </div>
     );
