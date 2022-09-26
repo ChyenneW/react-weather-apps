@@ -5,20 +5,20 @@ import "./SearchWeather.css";
 export default function SearchWeather() {
     return (
         <div className="searchArea">
-            <form className="col-8">
+            <form >
                 <input
                     type="search"
                     placeholder="Enter a City"
-                    className="col-6 searchBar"
+                    className="searchBar"
                 />
                 <button
                     type="submit"
-                    className="col-4 searchButton"
+                    className="searchButton"
                 >
                     Search
                 </button>
-
             </form>
+            <button className="locationButton">Current Location</button>
         </div>
     );
 }
