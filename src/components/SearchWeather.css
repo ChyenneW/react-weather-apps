@@ -1,0 +1,14 @@
+.searchArea {
+  justify-content: center;
+}
+
+.search {
+  padding: 10px;
+  margin: 10px;
+}
+
+.searchBar {
+  width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+}
