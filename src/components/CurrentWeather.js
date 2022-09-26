@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./CurrentWeather.css";
+import Date from "./Date";
 
 export default function CurrentWeather() {
     return (
@@ -13,7 +14,7 @@ export default function CurrentWeather() {
             </div>
             <div className="currentDescription">
                 <div className="detailsArea">
-                    <div className="date">sunday,month day at time</div>
+                    <Date />
                     <div className="details">
                         <div>description</div>
                         <div>humidity</div>
