@@ -1,0 +1,35 @@
+.descriptionBox {
+  display: grid;
+  grid-template-columns: auto;
+
+  width: 70%;
+}
+
+.current {
+  grid-row: 1;
+
+  display: grid;
+}
+
+#currentCity {
+  grid-column: 1 / 2;
+}
+
+.currentTemp {
+  grid-column: 4;
+}
+
+.currentDescription {
+  display: grid;
+  grid-template-columns: auto;
+
+  margin-bottom: 30px;
+}
+
+.detailsArea {
+  grid-column: 1 / 2;
+}
+
+#weatherImage {
+  grid-column: 4;
+}
