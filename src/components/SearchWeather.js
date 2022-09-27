@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import axios from "axios";
 import { AppContext } from "../context/WeatherContext";
 
 import "./SearchWeather.css";
@@ -6,6 +7,36 @@ import "./SearchWeather.css";
 export default function SearchWeather() {
     const { contextCity, dispatch } = useContext(AppContext);
     let [city, setCity] = useState("");
+    let [data, setWeatherData] = useState({});
+
+    function handleResponse(response) {
+        console.log(response.data);
+        let icon = response.data.weather[0].icon;
+
+        setWeatherData({
+            temperature: Math.round(response.data.main.temp),
+            tempMax: Math.round(response.data.main.temp_max),
+            tempMin: Math.round(response.data.main.temp_min),
+            wind: Math.round(response.data.wind.speed),
+            humidity: Math.round(response.data.main.humidity),
+            description: response.data.weather[0].main,
+            image: `https://openweathermap.org/img/wn/${icon}@2x.png`,
+            coords: response.data.coord,
+        });
+
+        dispatch({
+            type: 'UPDATE_DATA',
+            payload: data,
+        });
+        console.log(data);
+    }
+
+    function callForData() {
+        const apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
+        let units = "imperial";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse);
+    }
 
     const submitCity = (event) => {
         event.preventDefault();
@@ -14,6 +45,8 @@ export default function SearchWeather() {
             type: 'UPDATE_CITY',
             payload: city,
         });
+
+        callForData();
     };
 
     return (
