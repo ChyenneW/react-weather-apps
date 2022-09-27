@@ -11,7 +11,6 @@ export default function SearchWeather() {
 
     function handleResponse(response) {
         console.log(response.data);
-        let icon = response.data.weather[0].icon;
 
         setWeatherData({
             temperature: Math.round(response.data.main.temp),
@@ -20,7 +19,7 @@ export default function SearchWeather() {
             wind: Math.round(response.data.wind.speed),
             humidity: Math.round(response.data.main.humidity),
             description: response.data.weather[0].main,
-            image: `https://openweathermap.org/img/wn/${icon}@2x.png`,
+            icon: response.data.weather[0].icon,
             coords: response.data.coord,
         });
 
