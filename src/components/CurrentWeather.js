@@ -4,29 +4,26 @@ import WeatherData from "./WeatherData";
 import { AppContext } from "../context/WeatherContext";
 
 import "./CurrentWeather.css";
+import WeatherImage from "./WeatherImage";
 
 export default function CurrentWeather() {
     const { city } = useContext(AppContext);
+    const { data } = useContext(AppContext);
 
     return (
         <div className="descriptionBox">
             <div className="current">
                 <h1 id="currentCity">{city}</h1>
                 <div className="currentTemp">
-                    <span>74</span><span>F</span>|<span>C</span>
+                    <span>{data.temperature}</span><span>F</span>|<span>C</span>
                 </div>
             </div>
             <div className="currentDescription">
                 <div className="detailsArea">
                     <DateInfo />
-                    <div className="details">
-                        <div>description</div>
-                        <div>humidity</div>
-                        <div>wind</div>
-                    </div>
                     <WeatherData />
                 </div>
-                <div id="weatherImage">weather image</div>
+                <WeatherImage />
             </div>
         </div>
     );
