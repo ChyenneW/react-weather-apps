@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { AppContext } from "../context/WeatherContext";
 
@@ -8,6 +8,14 @@ export default function SearchWeather() {
     const { contextCity, dispatch } = useContext(AppContext);
     let [city, setCity] = useState("");
     let [data, setWeatherData] = useState({});
+
+    useEffect(() => {
+        const apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
+        let units = "imperial";
+        let defaultCity = "New York";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse);
+    }, []);
 
     function handleResponse(response) {
         console.log(response.data);
