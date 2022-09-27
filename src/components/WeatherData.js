@@ -1,13 +1,16 @@
-import React from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+import { AppContext } from "../context/WeatherContext";
+
+
 
 export default function WeatherData() {
+    const { data } = useContext(AppContext);
 
     return (
         <div className="details">
-            <div>description</div>
-            <div>humidity</div>
-            <div>wind</div>
+            <div>{data.description}</div>
+            <div>Humidity: {data.humidity}%</div>
+            <div>Wind Speed: {data.wind} MPH</div>
         </div>
-    )
+    );
 }
