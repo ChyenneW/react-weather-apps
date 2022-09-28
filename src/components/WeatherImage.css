@@ -8,7 +8,7 @@
   width: 150px;
 }
 
-@media (max-width: 530) {
+@media (max-width: 530px) {
   .weatherImage img {
     width: 110px;
   }

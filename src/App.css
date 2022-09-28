@@ -11,7 +11,7 @@
   width: 85%;
 }
 
-@media (max-width: 530) {
+@media (max-width: 530px) {
   .App {
     width: 95%;
   }
