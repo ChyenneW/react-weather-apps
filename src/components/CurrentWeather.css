@@ -33,3 +33,14 @@
 #weatherImage {
   grid-column: 4;
 }
+
+.mainTemp,
+.mainCity {
+  font-size: 45px;
+}
+
+.units {
+  font-size: 18px;
+  font-weight: 100;
+  color: rgba(132, 131, 131, 0.6);
+}

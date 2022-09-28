@@ -1,0 +1,10 @@
+.weatherForecast {
+  padding-left: 30px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.forecastDescription {
+  font-weight: 100;
+  color: rgba(132, 131, 131, 0.6);
+}
