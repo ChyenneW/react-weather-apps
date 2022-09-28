@@ -1,29 +1,25 @@
 import React, { useContext } from "react";
 import DateInfo from "./Date";
-import WeatherData from "./WeatherData";
-import { AppContext } from "../context/WeatherContext";
-
-import "./CurrentWeather.css";
 import WeatherImage from "./WeatherImage";
 
-export default function CurrentWeather() {
-    const { city } = useContext(AppContext);
-    const { data } = useContext(AppContext);
+import "./CurrentWeather.css";
 
+export default function CurrentWeather(props) {
     return (
         <div className="descriptionBox">
             <div className="current">
-                <h1 id="currentCity">{city}</h1>
+                <h1 id="currentCity">{props.data.city}</h1>
                 <div className="currentTemp">
-                    <span>{data.temperature}</span><span>F</span>|<span>C</span>
+                    <span>{props.data.temperature}</span><span>F</span>|<span>C</span>
                 </div>
             </div>
             <div className="currentDescription">
                 <div className="detailsArea">
                     <DateInfo />
-                    <WeatherData />
                 </div>
-                <WeatherImage />
+                <div>
+                    <WeatherImage icon={props.data.icon} description={props.data.description} />
+                </div>
             </div>
         </div>
     );

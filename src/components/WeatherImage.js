@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
-import { AppContext } from "../context/WeatherContext";
 
-export default function WeatherImage() {
-    const { data } = useContext(AppContext)
-    let image = `https://openweathermap.org/img/wn/${data.icon}@2x.png`
+export default function WeatherImage(props) {
+    let image = `https://openweathermap.org/img/wn/${props.icon}@2x.png`
 
     return (
         <div id="weatherImage">
-            <img src={image} alt={data.description} />
+            <img src={image} alt={props.description} />
         </div>
     );
 }

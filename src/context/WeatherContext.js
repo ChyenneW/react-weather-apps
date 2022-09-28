@@ -5,13 +5,11 @@ const AppReducer = (state, action) => {
     switch (action.type) {
         case 'UPDATE_CITY':
             return {
-                ...state,
                 city: action.payload,
             };
 
         case 'UPDATE_DATA':
             return {
-                ...state,
                 data: action.payload,
             };
 
@@ -22,8 +20,19 @@ const AppReducer = (state, action) => {
 };
 
 const initialState = {
-    city: 'New York',
-    data: {},
+    city: "New York",
+    data: {
+        city: "Loading",
+        temperature: "Loading",
+        tempMax: "Loading",
+        tempMin: "Loading",
+        wind: "Loading",
+        humidity: "Loading",
+        description: "Loading",
+        icon: "Loading",
+        lat: "Loading",
+        lon: "Loading",
+    },
 
 };
 

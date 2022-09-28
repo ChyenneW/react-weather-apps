@@ -1,13 +1,15 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { AppContext } from "../context/WeatherContext";
+
+import CurrentWeather from "./CurrentWeather";
+import WeatherData from "./WeatherData";
+import WeatherForecast from "./WeatherForecast";
 
 import "./SearchWeather.css";
 
 export default function SearchWeather() {
-    const { contextCity, dispatch } = useContext(AppContext);
     let [city, setCity] = useState("");
-    let [data, setWeatherData] = useState({});
+    let [weatherData, setWeatherData] = useState({});
 
     useEffect(() => {
         const apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
@@ -18,9 +20,13 @@ export default function SearchWeather() {
     }, []);
 
     function handleResponse(response) {
-        console.log(response.data);
+        console.log(response.data.name);
+
+        setCity(response.data.name)
+        console.log(city);
 
         setWeatherData({
+            city: response.data.name,
             temperature: Math.round(response.data.main.temp),
             tempMax: Math.round(response.data.main.temp_max),
             tempMin: Math.round(response.data.main.temp_min),
@@ -28,14 +34,11 @@ export default function SearchWeather() {
             humidity: Math.round(response.data.main.humidity),
             description: response.data.weather[0].main,
             icon: response.data.weather[0].icon,
-            coords: response.data.coord,
+            lat: response.data.coord.lat,
+            lon: response.data.coord.lon,
         });
 
-        dispatch({
-            type: 'UPDATE_DATA',
-            payload: data,
-        });
-        console.log(data);
+        console.log(weatherData);
     }
 
     function callForData() {
@@ -47,32 +50,37 @@ export default function SearchWeather() {
 
     const submitCity = (event) => {
         event.preventDefault();
-
-        dispatch({
-            type: 'UPDATE_CITY',
-            payload: city,
-        });
-
         callForData();
     };
 
     return (
-        <div className="searchArea">
-            <form onSubmit={submitCity}>
-                <input
-                    type="search"
-                    placeholder="Enter a City"
-                    className="searchBar"
-                    onChange={(event) => setCity(event.target.value)}
-                />
-                <button
-                    type="submit"
-                    className="searchButton"
-                >
-                    Search
-                </button>
-            </form>
+        <div>
+            <div className="searchArea">
+                <form onSubmit={submitCity}>
+                    <input
+                        type="search"
+                        placeholder="Enter a City"
+                        className="searchBar"
+                        onChange={(event) => setCity(event.target.value)}
+                    />
+                    <button
+                        type="submit"
+                        className="searchButton"
+                    >
+                        Search
+                    </button>
+                </form>
+            </div>
             <button className="locationButton">Current Location</button>
+            <div>
+                <div className="music">make me a radio</div>
+            </div>
+            <div>
+                <CurrentWeather data={weatherData} />
+                <WeatherData data={weatherData} />
+                <div className="weekforcast">sunday</div>
+                <WeatherForecast data={weatherData} />
+            </div>
         </div>
     );
 }
