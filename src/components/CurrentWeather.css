@@ -49,7 +49,7 @@
   grid-column: 4;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 600px) {
   .mainCity {
     font-size: 35px;
   }

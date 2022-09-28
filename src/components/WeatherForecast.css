@@ -24,7 +24,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 600px) {
   .forecastDay {
     font-size: 20px;
   }

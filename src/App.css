@@ -8,11 +8,11 @@
   border-radius: 10px;
   margin: 15px;
   padding: 20px;
-  width: 85%;
+  width: 75%;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 600px) {
   .App {
-    width: 95%;
+    width: 90%;
   }
 }
