@@ -1,8 +1,7 @@
 .descriptionBox {
   display: grid;
   grid-template-columns: auto;
-
-  width: 70%;
+  font-weight: lighter;
 }
 
 .current {
@@ -11,12 +10,24 @@
   display: grid;
 }
 
-#currentCity {
+.mainCity {
   grid-column: 1 / 2;
+  font-weight: 700px;
+}
+
+.mainTemp,
+.mainCity {
+  font-size: 45px;
 }
 
 .currentTemp {
   grid-column: 4;
+}
+
+.units {
+  font-size: 18px;
+  font-weight: 100;
+  color: rgba(132, 131, 131, 0.6);
 }
 
 .currentDescription {
@@ -28,19 +39,9 @@
 
 .detailsArea {
   grid-column: 1 / 2;
+  font-size: 19px;
 }
 
-#weatherImage {
+.weatherImage {
   grid-column: 4;
-}
-
-.mainTemp,
-.mainCity {
-  font-size: 45px;
-}
-
-.units {
-  font-size: 18px;
-  font-weight: 100;
-  color: rgba(132, 131, 131, 0.6);
 }

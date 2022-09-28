@@ -39,3 +39,7 @@ button:hover {
   position: relative;
   top: 3px;
 }
+
+.music {
+  margin-bottom: 20px;
+}

@@ -72,12 +72,12 @@ export default function SearchWeather() {
                 </form>
                 <button className="locationButton">Find Me</button>
             </div>
-            <div>
+            <div className="d-flex justify-content-center">
                 <div className="music">make me a radio</div>
             </div>
             <div>
                 <CurrentWeather data={weatherData} />
-                <WeatherData data={weatherData} />
+
                 <div className="weekforcast">sunday</div>
                 <WeatherForecast data={weatherData} />
             </div>
