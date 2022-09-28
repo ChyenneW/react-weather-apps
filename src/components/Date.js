@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./WeatherData.css";
+
 export default function DateInfo() {
     let now = new Date();
 
@@ -25,9 +27,9 @@ export default function DateInfo() {
     let sentence = `${day}, ${month} ${date} at ${hour}:${minutes}`;
 
     if (now.getHours >= 12) {
-        return <div>{sentence} P.M</div>
+        return <div className="time">{sentence} P.M</div>
     } else {
-        return <div>{sentence} A.M</div>
+        return <div className="time">{sentence} A.M</div>
     }
 
 }

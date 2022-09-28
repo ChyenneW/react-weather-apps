@@ -12,11 +12,11 @@
 
 .mainCity {
   grid-column: 1 / 2;
-  font-weight: 700px;
+  font-weight: 700;
+  font-size: 65px;
 }
 
-.mainTemp,
-.mainCity {
+.mainTemp {
   font-size: 45px;
 }
 
@@ -27,7 +27,7 @@
 .units {
   font-size: 18px;
   font-weight: 100;
-  color: rgba(132, 131, 131, 0.6);
+  color: rgba(193, 191, 191, 0.6);
 }
 
 .currentDescription {

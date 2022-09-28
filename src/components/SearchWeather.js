@@ -77,9 +77,9 @@ export default function SearchWeather() {
             </div>
             <div>
                 <CurrentWeather data={weatherData} />
-
-                <div className="weekforcast">sunday</div>
-                <WeatherForecast data={weatherData} />
+                <div className="weekforcast">
+                    <WeatherForecast data={weatherData} />
+                </div>
             </div>
         </div>
     );

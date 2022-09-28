@@ -4,7 +4,22 @@
   font-weight: 400;
 }
 
-.forecastDescription {
+.forecastDay {
+  font-size: 30px;
+}
+
+.forecastDetails {
   font-weight: 100;
-  color: rgba(132, 131, 131, 0.6);
+  color: rgba(193, 191, 191, 0.6);
+  font-weight: lighter;
+}
+
+.forecastDetails span {
+  padding-right: 4px;
+}
+
+.forecastHigh,
+.forecastLow {
+  color: white;
+  font-weight: 700;
 }
