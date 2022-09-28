@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import CurrentWeather from "./CurrentWeather";
-import WeatherData from "./WeatherData";
 import WeatherForecast from "./WeatherForecast";
 
 import "./SearchWeather.css";

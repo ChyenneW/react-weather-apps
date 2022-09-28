@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import DateInfo from "./Date";
 import WeatherData from "./WeatherData";
 import WeatherImage from "./WeatherImage";
