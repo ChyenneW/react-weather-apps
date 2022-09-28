@@ -23,3 +23,17 @@
   color: white;
   font-weight: 700;
 }
+
+@media (max-width: 530) {
+  .forecastDay {
+    font-size: 20px;
+  }
+
+  .forecastImage img {
+    width: 90px;
+  }
+
+  .weatherForecast {
+    font-size: 18px;
+  }
+}

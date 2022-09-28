@@ -6,3 +6,10 @@
   font-size: 23px;
   font-weight: 500;
 }
+
+@media (max-width: 530) {
+  .details,
+  .time {
+    font-size: 15px;
+  }
+}

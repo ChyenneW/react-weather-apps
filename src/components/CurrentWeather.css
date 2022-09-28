@@ -1,5 +1,6 @@
 .descriptionBox {
   display: grid;
+  align-items: center;
   grid-template-columns: auto;
   font-weight: lighter;
 }
@@ -8,6 +9,7 @@
   grid-row: 1;
 
   display: grid;
+  align-items: center;
 }
 
 .mainCity {
@@ -32,6 +34,7 @@
 
 .currentDescription {
   display: grid;
+  align-items: center;
   grid-template-columns: auto;
 
   margin-bottom: 30px;
@@ -44,4 +47,14 @@
 
 .weatherImage {
   grid-column: 4;
+}
+
+@media (max-width: 530) {
+  .mainCity {
+    font-size: 35px;
+  }
+
+  .mainTemp {
+    font-size: 30px;
+  }
 }

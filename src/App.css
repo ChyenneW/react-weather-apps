@@ -10,3 +10,9 @@
   padding: 20px;
   width: 85%;
 }
+
+@media (max-width: 530) {
+  .App {
+    width: 95%;
+  }
+}

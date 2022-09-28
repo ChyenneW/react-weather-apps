@@ -7,3 +7,9 @@
 .weatherImage img {
   width: 150px;
 }
+
+@media (max-width: 530) {
+  .weatherImage img {
+    width: 110px;
+  }
+}
