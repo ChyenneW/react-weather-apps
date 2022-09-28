@@ -25,8 +25,17 @@ form {
   border: none;
 
   grid-row: 1;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: slategray;
 }
 
 .locationButton {
-  width: 50%;
+  width: 90%;
+  height: 33px;
+  grid-column: 4;
+  position: relative;
+  top: 3px;
 }

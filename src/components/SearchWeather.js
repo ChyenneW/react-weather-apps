@@ -70,8 +70,8 @@ export default function SearchWeather() {
                         Search
                     </button>
                 </form>
+                <button className="locationButton">Find Me</button>
             </div>
-            <button className="locationButton">Current Location</button>
             <div>
                 <div className="music">make me a radio</div>
             </div>
