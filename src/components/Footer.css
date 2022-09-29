@@ -1,0 +1,20 @@
+.footer {
+  font-size: 20px;
+  text-align: center;
+  grid-row: 2;
+}
+
+span {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: rgb(48, 39, 85);
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+  color: rgb(110, 104, 154);
+}
