@@ -10,7 +10,7 @@ export default function WeatherForecast(props) {
 
     useEffect(() => {
         setLoaded("unloaded");
-    }, [props.data.lat, props.data.lon]);
+    }, [props.data.lat, props.data.lon])
 
     if (loaded === "unloaded") {
         let apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
@@ -33,7 +33,7 @@ export default function WeatherForecast(props) {
             <div className="container">
                 <div className="row weatherForecast">
                     {forecast.map(function (dailyForecast, index) {
-                        if (index < 5) {
+                        if (index > 0 && index <= 5) {
                             return (
                                 <div className="row" key={index}>
                                     <WeatherForecastDay forecastData={dailyForecast} />

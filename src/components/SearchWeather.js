@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import CurrentWeather from "./CurrentWeather";
@@ -7,16 +7,9 @@ import WeatherForecast from "./WeatherForecast";
 import "./SearchWeather.css";
 
 export default function SearchWeather() {
+    let [loaded, setLoad] = useState(false);
     let [city, setCity] = useState("");
     let [weatherData, setWeatherData] = useState({});
-
-    useEffect(() => {
-        const apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
-        let units = "imperial";
-        let defaultCity = "New York";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=${units}`;
-        axios.get(apiUrl).then(handleResponse);
-    }, []);
 
     function handleResponse(response) {
         console.log(response.data.name);
@@ -36,7 +29,7 @@ export default function SearchWeather() {
             lat: response.data.coord.lat,
             lon: response.data.coord.lon,
         });
-
+        setLoad(true);
         console.log(weatherData);
     }
 
@@ -52,34 +45,46 @@ export default function SearchWeather() {
         callForData();
     };
 
-    return (
-        <div>
-            <div className="searchArea">
-                <form onSubmit={submitCity}>
-                    <input
-                        type="search"
-                        placeholder="Enter a City"
-                        className="searchBar"
-                        onChange={(event) => setCity(event.target.value)}
-                    />
-                    <button
-                        type="submit"
-                        className="searchButton"
-                    >
-                        Search
-                    </button>
-                </form>
-                <button className="locationButton">Find Me</button>
-            </div>
-            <div className="d-flex justify-content-center">
-                <div className="music">make me a radio</div>
-            </div>
+    if (loaded) {
+        return (
             <div>
-                <CurrentWeather data={weatherData} />
-                <div className="weekforcast">
-                    <WeatherForecast data={weatherData} />
+                <div className="searchArea">
+                    <form onSubmit={submitCity}>
+                        <input
+                            type="search"
+                            placeholder="Enter a City"
+                            className="searchBar"
+                            onChange={(event) => setCity(event.target.value)}
+                        />
+                        <button
+                            type="submit"
+                            className="searchButton"
+                        >
+                            Search
+                        </button>
+                    </form>
+                    <button className="locationButton">Find Me</button>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <div className="music">make me a radio</div>
+                </div>
+                <div>
+                    <CurrentWeather data={weatherData} />
+                    <div className="weekforcast">
+                        <WeatherForecast data={weatherData} />
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+
+    } else {
+        const apiKey = "624159ad3ba6f7dd7f8492ffa1d7a854";
+        let units = "imperial";
+        let defaultCity = "New York";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse);
+
+        return <div>Loading...</div>
+    }
+
 }
