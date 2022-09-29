@@ -9,6 +9,8 @@
   margin: 15px;
   padding: 20px;
   width: 75%;
+
+  grid-row: 1;
 }
 
 @media (max-width: 600px) {
