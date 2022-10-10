@@ -26,7 +26,7 @@ export default function DateInfo() {
 
     let sentence = `${day}, ${month} ${date} at ${hour}:${minutes}`;
 
-    if (now.getHours >= 12) {
+    if (now.getHours() >= 12) {
         return <div className="time">{sentence} P.M</div>
     } else {
         return <div className="time">{sentence} A.M</div>

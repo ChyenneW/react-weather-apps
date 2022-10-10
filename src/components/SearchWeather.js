@@ -5,6 +5,7 @@ import CurrentWeather from "./CurrentWeather";
 import WeatherForecast from "./WeatherForecast";
 
 import "./SearchWeather.css";
+import SpotifyLogin from "./SpotifyLogin";
 
 export default function SearchWeather() {
     let [loaded, setLoad] = useState(false);
@@ -67,6 +68,7 @@ export default function SearchWeather() {
                 </div>
                 <div className="d-flex justify-content-center">
                     <div className="music">make me a radio</div>
+                    <SpotifyLogin />
                 </div>
                 <div>
                     <CurrentWeather data={weatherData} />
