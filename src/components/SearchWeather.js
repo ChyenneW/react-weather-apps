@@ -4,8 +4,11 @@ import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import WeatherForecast from "./WeatherForecast";
 
+
 import "./SearchWeather.css";
-import SpotifyLogin from "./SpotifyLogin";
+import Spotify from "./Spotify";
+
+
 
 export default function SearchWeather() {
     let [loaded, setLoad] = useState(false);
@@ -46,6 +49,7 @@ export default function SearchWeather() {
         callForData();
     };
 
+
     if (loaded) {
         return (
             <div>
@@ -67,8 +71,7 @@ export default function SearchWeather() {
                     <button className="locationButton">Find Me</button>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <div className="music">make me a radio</div>
-                    <SpotifyLogin />
+                    <Spotify />
                 </div>
                 <div>
                     <CurrentWeather data={weatherData} />
