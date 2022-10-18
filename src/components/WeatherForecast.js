@@ -20,7 +20,6 @@ export default function WeatherForecast(props) {
         let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
         function showForecast(response) {
-            console.log(response.data.daily);
             setForecast(response.data.daily);
             setLoaded("loaded");
         }

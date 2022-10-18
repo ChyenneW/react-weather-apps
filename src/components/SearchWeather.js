@@ -16,10 +16,7 @@ export default function SearchWeather() {
     let [weatherData, setWeatherData] = useState({});
 
     function handleResponse(response) {
-        console.log(response.data.name);
-
         setCity(response.data.name)
-        console.log(city);
 
         setWeatherData({
             city: response.data.name,
@@ -34,7 +31,6 @@ export default function SearchWeather() {
             lon: response.data.coord.lon,
         });
         setLoad(true);
-        console.log(weatherData);
     }
 
     function callForData() {
