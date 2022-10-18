@@ -67,7 +67,7 @@ export default function SearchWeather() {
                     <button className="locationButton">Find Me</button>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Spotify />
+                    <Spotify description={weatherData.description} />
                 </div>
                 <div>
                     <CurrentWeather data={weatherData} />
