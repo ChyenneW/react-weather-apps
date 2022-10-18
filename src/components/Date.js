@@ -15,7 +15,7 @@ export default function DateInfo() {
     let hour = now.getHours();
     if (hour <= 9) {
         hour = `0${hour}`;
-    } else {
+    } else if (hour >= 13) {
         hour = hour - 12;
     }
 
