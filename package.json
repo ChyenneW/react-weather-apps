@@ -10,6 +10,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "react-spotify-web-playback": "^0.10.0",
     "spotify-web-api-node": "^5.0.2"
   },
   "scripts": {

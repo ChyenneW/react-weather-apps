@@ -1,10 +1,13 @@
 import React from "react";
 import SpotifyLogin from "./SpotifyLogin";
-import SpotifyPlayer from "./SpotifyPlayer";
+import MySpotifyPlayer from "./MySpotifyPlayer";
 
 const code = new URLSearchParams(window.location.search).get('code');
 
-export default function Spotify({ descritption }) {
+export default function Spotify(props) {
     console.log(code);
-    return code ? <SpotifyPlayer code={code} descritption={descritption} /> : <SpotifyLogin />
+    console.log(props);
+    console.log(props.data.description);
+    let desc = props.data.description;
+    return code ? <MySpotifyPlayer code={code} search={desc} /> : <SpotifyLogin />
 }
