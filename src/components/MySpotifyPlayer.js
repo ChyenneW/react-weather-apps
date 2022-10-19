@@ -40,6 +40,10 @@ export default function MySpotifyPlayer(props) {
 
     return (
         <div className="trackArea">
+            <div className="trackInfo">
+                <div>{artist}</div>
+                <div>{title}</div>
+            </div>
             <div className="trackPlayer">
                 <SpotifyPlayer
                     token={accessToken}
