@@ -1,0 +1,16 @@
+.trackArea {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.trackInfo {
+  font-size: 25px;
+}
+
+.trackPlayer {
+  width: 300px;
+}
