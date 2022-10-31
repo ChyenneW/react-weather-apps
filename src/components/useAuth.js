@@ -7,7 +7,7 @@ export default function useAuth(code) {
     const [expiresIn, setExpiresIn] = useState();
 
     useEffect(() => {
-        axios.post('http://localhost:3011/login', {
+        axios.post('https://react-spotify-weatherapp.netlify.app/login', {
             code,
         }).then(res => {
             console.log(res.data);
@@ -25,7 +25,7 @@ export default function useAuth(code) {
         if (!refreshToken || !expiresIn) return
 
         const interval = setInterval(() => {
-            axios.post('http://localhost:3011/refresh', {
+            axios.post('https://react-spotify-weatherapp.netlify.app/refresh', {
                 refreshToken,
             }).then(res => {
                 setAccessToken(res.data.accessToken);

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.post('/login', (req, res) => {
     const code = req.body.code
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: 'http://localhost:3000',
+        redirectUri: 'https://react-spotify-weatherapp.netlify.app/',
         clientId: 'ca2f77c2d53d499eb58ebf742d9fddb2',
         clientSecret: 'aab9794a26bb4f2c8d07d23bedeeb4be'
     })
@@ -53,4 +53,4 @@ app.post('/refresh', (req, res) => {
         })
 })
 
-app.listen(3011)
+app.listen(3001)
